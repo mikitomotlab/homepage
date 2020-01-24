@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>virtual box</title>
+<style></style>
+<link  rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div align="left">
+
+<img src="image/welcome.gif"
+width="210" height="88" alt="welcome">
+<br><br>
+
+<hr width="500">
+<a href="index.html">トップ</a>
+    <a href="about.html">プロフィール</a>
+    <a href="link.html">リンク集</a><br>
+<hr width="500"><br><br>
+
+
+外部PCとVirtual BOXの通信をするとき<br>
+virtualboxから外部PCへ送信することはできるが、外部PCからvirtualboxへ送信することはできないことがある。<br>
+<section>
+確認事項<br>
+<ul>
+  <li>通信手法（ブリッジアダプタ、NAT）
+  <li>ファイアーウォールの確認（ホストPCと仮想環境のOS）
+  <li>IPアドレス、PORTの確認（一致しているか）
+</ul>
+<br><br>
+
+<hr width="500">
+<h2>通信手法</h2>
+<p>virtualboxのネットワーク設定は
+  <ul>
+    <li>NAT
+    <li>Briddged Adapter
+    <li>Internal Network
+    <li>Host-only Adapter
+  </ul>
+  の4つがある。この中で今回選択したネットワーク設定はBriddged Adapterである。<br>
+  これから、NATとブリッジアダプターについて説明します。<br>
+  <a href ="http://c-through.blogto.jp/archives/14539119.html">参考にしたページ</a>はこちら。
+  NAT構成の特徴をまとめると
+  <ul>
+    <li>ゲストOSから外部ネットワークには通信可能
+    <li>外部ネットワークおよびホストOSからの通信は基本不可（ポートフォワーディング機能を使えば特定のアプリの接続はできる。）
+    <li>ゲストOSはDHCPによるIPアドレスの自動取得設定とする必要がある。
+    <li>ゲストOS間の通信は不可
+  </ul>
+  である。<br>
+
+  次に、ブリッジアダプタについてまとめると
+  <ul>
+    <li>ゲストOSは、ホストOSと同じネットワークセグメントの設定とすることで、ホストOSと同じように外部ネットワークへ通信ができる。
+    <li>同じネットワークセグメントであれば、ゲストOS間およびホストOSとゲストOS間での通信が可能。
+    <li>セキュリティーへの注意が必要
+  </ul>
+  となる。<br>
+  セグメントとは、LAN内のグループのことで192.168.?.1などの?部分のことです。<br>
+  セグメントのめっりとについては<a href ="http://nw.seeeko.com/archives/50901586.html">こちら</a>を参考にするとよいと思います。<br>
+
+  以上のことから、外部通信、内部の通信のどちらも使いやすいほうが開発しやすいと考えブリッジアダプターの通信方法を選びました。<br>
+</p>
+<hr width="500">
+
+<h2>firewallの設定</h2>
+<p>  ブリッジアダプターに設定してもうまく通信できないときはfirewallの設定を変更または新規に作らなければならない可能性があります。<br>
+  操作方法(Windows)は<a href = "http://blog.snowcait.info/2014/04/21/access-virtualbox-from-other-pc/">こちら</a>を参考にしてください。<br>
+  簡単にまとめると、Windowsのfirewallを開いていただき、左のウィンドウにある受信の規則をクリックします。そのあと、右ウィンドウの新しい規則をクリック
+  し、ポートを設定するという流れとなります。
+  <br>
+  <br>
+</p>
+
+
+
+</div>
+
+
+
+</body>
+</html>
