@@ -1,14 +1,10 @@
 <html>
 <head>
 <title>githubの使い方</title>
-</head>
-<body background="image/back.gif">
+<link href="style.css" rel="stylesheet" type="text/css">
 
-<div align="center">
+<body class="hobby-body">
 
-<img src="image/welcome.gif"
-width="210" height="88" alt="welcome">
-<br><br>
 
 <hr width="500">
 <a href="index.html">トップ</a>
@@ -27,7 +23,7 @@ githubを初めて導入しました。
 </p>
 
 <h1>gitの導入</h1>
-<p clas="bs">
+<p class="bs">
  CUIで手軽にローカルとリモートを管理することができるgitを導入しようと考えました。
 </p>
 
@@ -39,6 +35,7 @@ githubを初めて導入しました。
   私はデフォルトでの設定をしました。
   参考したページは<a href="https://eng-entrance.com/git-install">こちら</a>です。
 </p>
+<hr >
 
 <h2>git configを設定する</h2>
 <p>
@@ -56,6 +53,7 @@ githubを初めて導入しました。
   </ul>
 
 </p>
+<hr>
 
 <h2>ローカルリポジトリを作成する</h2>
 <p>
@@ -68,30 +66,33 @@ githubを初めて導入しました。
   </ul>
   これを実行すると、フォルダに.gitフォルダが作成され、git が初期化されます。
 </p>
+<hr>
 
   <h3>git へ登録</h3>
   <p>
    <ul>
      <li>$git add [アップロード（登録）したいファイルやフォルダ]
-    </ul>
-    これによってファイルやフォルダをアップロードする準備ができます。登録したかどうかを確認するために
-    <ul>
+   </ul>
+  これによってファイルやフォルダをアップロードする準備ができます。登録したかどうかを確認するために
+   <ul>
       <li>$git status
-    </ul>
+   </ul>
     を実行します。
-    <h3>コミットする</h3>
-    <ul>
-      <li>$git commit -m "コミットする内容(first message)"
-    </ul>
+   <h3>コミットする</h3>
+   <ul>
+     <li>$git commit -m "コミットする内容(first message)"
+   </ul>
     これによってアップロードしたときにその内容が表示されます。
-  </p>
+   </p>
 
   <a href="https://teratail.com/questions/128129">参考にしたページ </a>
+  <hr>
 
   <h2>pushしてローカルリポジトリをリモートリポジトリへアップロードする</h2>
   <h3>リモートリポジトリを作成</h3>
   <p>
     リモートリポジトリはgithubで作成します。repositories -> NEW -> repository name, public/private, add README?, create repositoryで作成できます。
+  </p>
 
 
   <h3>githubへローカルリポジトリをアップロードする</h3>
@@ -112,19 +113,20 @@ githubを初めて導入しました。
   githubを開いて確認します。
 
   <h3>README.mdを追加でアップロードしたいとき</h3>
-  <li>
-    <ul>$echo "# homepage" >> README.md
-    <ul>$git add README.md
-    <ul>$git commit -m "first commit"
-    <ul>$git remote add origin git@github.com/username/repositname.git
-    <ul>$git push -u origin master
-  </li>
+  <ul>
+    <li>$echo "# homepage" >> README.md
+    <li>$git add README.md
+    <li>$git commit -m "first commit"
+    <li>$git remote add origin git@github.com/username/repositname.git
+    <li>$git push -u origin master
+  </ul>
 
   <a href="https://qiita.com/Futo23/items/4d669f695680bc13d5fa">参考にしたページ1 </a>
   <a href="https://qiita.com/riversun/items/dac05d7fd9ac304dffa9">参考にしたページ2 </a>
+  <hr>
 
 
-  <h2>エラーについて</h2>
+  <h1>エラーについて</h1>
   <h3>チェック項目</h3>
   <ul>
     <li>git の設定を正しくしているか
