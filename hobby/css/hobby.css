@@ -1,0 +1,11 @@
+@charset "UTF-8";
+p{color: red;}
+/*メインエリア*/
+main{
+  width: 100%;
+  max-width: 930px;
+  margin: 0 auto;
+}
+
+/*リンク文字の色を設定*/
+main a {color: #2c9795;}

@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>githubの使い方</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<body class="hobby-body">
+
+
+<hr width="500">
+<a href="index.html">トップ</a>
+    <a href="about.html">プロフィール</a>
+    <a href="link.html">リンク集</a><br>
+    <a href="raspicamera.html">raspicameraについて</a><br>
+    <a href="ronbun.html">論文参考資料</a><br>
+    <a href="kennkyuu.html">研究</a><br>
+    <a href="siryounotukurikata.html">資料の作り方</a>
+<hr width="500">
+
+<p class="bs">
+
+githubを初めて導入しました。
+いくつか始める際に躓いた点がありましたのでここにメモします。
+</p>
+
+<h1>gitの導入</h1>
+<p class="bs">
+ CUIで手軽にローカルとリモートを管理することができるgitを導入しようと考えました。
+</p>
+
+<h2>gitをインストールする</h2>
+<p>
+  git for windowsをインストールします。
+  まず、<a href="https://gitforwindows.org/">公式サイト</a>からインストーラーのダウンロードをします。
+  次に、.exeを起動しインストールをします。いろいろ設定をすることになりますが、お好みで変更していただければと思います。
+  私はデフォルトでの設定をしました。
+  参考したページは<a href="https://eng-entrance.com/git-install">こちら</a>です。
+</p>
+<hr >
+
+<h2>git configを設定する</h2>
+<p>
+  gitのインストールができたらgit config を設定します。usernameとemailを設定します。これはgithubの設定と一致するように登録します。
+  まず、git bashを開いてください。右クリックでGit Bush Hereと書いてあるところを選択すると開くことができます。
+  次に設定についてです。以下の２つを入力して行います。
+  <ul>
+    <li>$git config --global user.name "$user_name"
+    <li>$git config --global user.email "$email"
+  </ul>
+  $user_name, $emailのところはgithubで設定した値にします。コードが正しくかけているかは
+  <ul>
+    <li>$git config --global user.name
+    <li>$git config --global user.email
+  </ul>
+
+</p>
+<hr>
+
+<h2>ローカルリポジトリを作成する</h2>
+<p>
+  次にローカルリポジトリを作成します。
+  まず、リモートにアップロードしたいフォルダを作成します。
+  作成したら、そのフォルダでGit Bashを開きます。このコマンドラインで初期化から新規作成したファイルをステージングエリアへの登録、コミットを行います。
+  <h3>git の初期化</h3>
+  <ul>
+    <li>$ git init
+  </ul>
+  これを実行すると、フォルダに.gitフォルダが作成され、git が初期化されます。
+</p>
+<hr>
+
+  <h3>git へ登録</h3>
+  <p>
+   <ul>
+     <li>$git add [アップロード（登録）したいファイルやフォルダ]
+   </ul>
+  これによってファイルやフォルダをアップロードする準備ができます。登録したかどうかを確認するために
+   <ul>
+      <li>$git status
+   </ul>
+    を実行します。
+   <h3>コミットする</h3>
+   <ul>
+     <li>$git commit -m "コミットする内容(first message)"
+   </ul>
+    これによってアップロードしたときにその内容が表示されます。
+   </p>
+
+  <a href="https://teratail.com/questions/128129">参考にしたページ </a>
+  <hr>
+
+  <h2>pushしてローカルリポジトリをリモートリポジトリへアップロードする</h2>
+  <h3>リモートリポジトリを作成</h3>
+  <p>
+    リモートリポジトリはgithubで作成します。repositories -> NEW -> repository name, public/private, add README?, create repositoryで作成できます。
+  </p>
+
+
+  <h3>githubへローカルリポジトリをアップロードする</h3>
+  アップロードしたいローカルリポジトリでgit bushを開きます。
+  次に、リモートを登録します。
+  <ul>
+    <li>$git remote add origin https://github.com/username/~.git
+  </ul>
+  削除するときは
+  <ul>
+    <li>$git remote rm origin
+  </ul>
+
+  そして、アップロードします。
+  <ul>
+    <li>$git push origin master
+  </ul>
+  githubを開いて確認します。
+
+  <h3>README.mdを追加でアップロードしたいとき</h3>
+  <ul>
+    <li>$echo "# homepage" >> README.md
+    <li>$git add README.md
+    <li>$git commit -m "first commit"
+    <li>$git remote add origin git@github.com/username/repositname.git
+    <li>$git push -u origin master
+  </ul>
+
+  <a href="https://qiita.com/Futo23/items/4d669f695680bc13d5fa">参考にしたページ1 </a>
+  <a href="https://qiita.com/riversun/items/dac05d7fd9ac304dffa9">参考にしたページ2 </a>
+  <hr>
+
+
+  <h1>エラーについて</h1>
+  <h3>チェック項目</h3>
+  <ul>
+    <li>git の設定を正しくしているか
+    <li>.git/configを確認（$vim .git/config）
+    <li>commit をしているか
+    <li>$git status でgitに登録されているファイルやフォルダを確認
+  </ul>
+
+  <h3>git でfatal: remote origin already exists.が出力された場合</h3>
+  <ul>
+    <li>git remote rm origin
+    <li>git remote add origin git@github.com/username/repositoryname.git
+    <li>git push -u origin master
+  </ul>
+  <a href="http://pyoonn.hatenablog.com/entry/2014/10/29/191744">参考にしたページ1</a>
+  <a href="https://qiita.com/unotuu/items/334f9b390cd8f19c4b2d">参考にしたページ2</a>
+
+<hr width="500">
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

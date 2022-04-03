@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>mypage</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<!-- <header class="site-header">
+    <h1 class="site-logo"><img src="image/mokuro.PNG" alt="WEBDESIGNDAY"></h1>
+    <nav class="gnav">
+        <ul class="gnav__menu">
+            <li class="gnav__menu__item"><a href=".//index.html">Top</a></li><br>
+            <li class="gnav__menu__item"><a href=".//about.html">Profile</a></li>
+            <li class="gnav__menu__item"><a href="">Works</a></li>
+            <li class="gnav__menu__item"><a href=".//kennkyuu.html">Study</a></li>
+            <li class="gnav__menu__item"><a href=".//music.html">Hobby</a></li>
+        </ul>
+    </nav>
+</header> -->
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="vue.js"></script>
+
+<body>
+  <div id="app">
+    <header>
+        <h1>homepage へようこそ!</h1>
+        <div class="header-list">
+            <transition-group appear tag="div" @before-enter="beforeEnter">
+                <li v-for="(item, index) in contentslist" :data-index="index" :key="item"><a v-bind:href="item.url">{{item.text}}</a></li>
+            </transition-group>
+        </div>
+    </header>
+
+
+  <div class="about" id="about">
+  <a name="about">
+      <h1 class="section-style">About</h1>
+  </a>
+  <table>
+      <tr>
+          <th class="th-left"><i class="fas fa-signature fa-fw gray"></i>Name</th>
+          <th>Mikitomo Shirahama</th>
+      </tr>
+      <tr>
+          <th class="th-left"><i class="fas fa-birthday-cake fa-fw maroon"></i>Birthday</th>
+          <th>1996/8/7</th>
+      </tr>
+      <tr>
+          <th class="th-left"><i class="fas fa-user-graduate fa-fw skyblue"></i>Univercity</th>
+          <th>Kagoshima</th>
+      </tr>
+      <tr>
+          <th class="th-left"><i class="fas fa-book-open fa-fw navy"></i>Study</th>
+          <th>Robotics</th>
+      </tr>
+      <tr>
+          <th class="th-left"><i class="fas fa-envelope fa-fw skyblue"></i>Email</th>
+          <th>k0913510@kadai.jp</th>
+      </tr>
+      </table>
+    </div>
+
+
+    <a id="skills">
+        <h1 class="section-style">Skills</h1>
+    </a>
+
+    <h2 class="subtitle">Languages</h2>
+
+    <div>
+        <transition-group appear tag="div" @before-enter="beforeEnter">
+            <a v-for="(item, index) in languages" :data-index="index" :key="item" v-bind:href="item.url" target="_blank"><img class="imgs" v-bind:src="item.src" v-bind:alt="item.url" border="0"></a>
+        </transition-group>
+    </div>
+
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

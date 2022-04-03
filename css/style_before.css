@@ -1,0 +1,137 @@
+header{
+  /*width: 1200px;*/
+  background: #fff;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  position: fixed;            /* ヘッダーの固定 */
+  top: 0px;                   /* 位置(上0px) */
+  left: 0px;                  /* 位置(右0px) */
+  width: 100%;                /* 横幅100%　*/
+  height: 120px;              /* 縦幅140px */
+  font-size:10px;
+  justify-content: space-between;
+}
+
+.header-list li {
+  /*  display: flex; */
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    list-style: none;
+}
+
+.header-list li:hover {
+    background-color: #EEE;
+}
+
+/*div{
+     text-aligin: center;
+}*/
+
+
+body{
+    background: #81bcd8;
+    font-family: Meiryo;/*書体*/
+    width: 100%;/*文章の長さ（幅）*/
+    padding: 0px;/*文字間隔*/
+    margin: 150px 0px ;/*外枠との間隔　上下　左右*/
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: center; */
+}
+
+.skill ul {
+  display: flex;
+}
+
+h1{
+    font-size:30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h2{
+    font-size:25px;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h3{
+    font-size:20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+hr{
+  width:100%;
+}
+
+table {
+    display: inline-block;
+  }
+
+ul {
+  text-align: left;
+}
+
+hr{
+  margin: 0 0 50 0;
+}
+
+p{
+  text-align: left;
+}
+
+
+
+.site-header{
+    /*background: #fff;*/
+    display: flex;
+    position: fixed;
+    /*justify-content: space-between;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+.site-logo img{
+    height: 160px;
+    width: auto;
+}
+.gnav__menu{
+    display: flex;
+}
+.gnav__menu__item{
+    margin-left: 20px;
+  }
+.gnav__menu__item a{
+    color: #333;
+    text-decoration: none;
+}
+
+.th-left {
+    color: #888;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.section-style {
+    border-top: 3px solid #fff;
+    padding: 10px;
+}
+
+.subtitle {
+    margin: 32px 0px 0px 0px;
+}
+
+.imgs {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+.hobby-body{
+  width: 1000px;
+}
