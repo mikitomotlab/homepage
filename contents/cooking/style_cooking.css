@@ -1,0 +1,125 @@
+
+/* index_v2.html's style */
+
+body{
+  color: #333;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding-right: 0px;
+  background-image: url("C:/Users/k0913/Documents/Hobby/homepage/image/eight_horns.png");
+  /* background-size: cover;画面全体に背景画像1枚を拡大する */
+  /* background-attachment: fixed; */
+  background-position: center center;
+  /* background-color:rgba(255,255,255,0.8); */
+  background-blend-mode:lighten;
+}
+
+h1 {
+  width: 700px;
+  /* display: inline-block; */
+  /* background: linear-gradient(transparent 70%, #a7d6ff 70%); */
+  border-bottom: solid 10px #a7d6ff ;
+  font-size: 40px;
+  padding-left: 20px;
+}
+
+h2 {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+  margin: 20px;
+  width: 400px;
+  height: 50px
+}
+
+header{
+  /* background-color: #efefef;  */
+  background-color: white; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 160px;
+  /* background-image: url("C:/Users/k0913/Desktop/homepage/image/background/3346807_m.jpg");  */
+}
+header h1{
+  margin: 0;
+}
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  /* background-color: Ivory;  */
+  background-color:rgba(255,255,255,0.9);
+  background-blend-mode:lighten;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* end of sidebar */
+
+/* start config of info */
+.info{
+  margin-left: 50px;
+}
+.info h1{
+  width: 1600px;
+  font-family: Verdana, sans-serif;
+  margin-left: 0px;
+}
+.info p{
+  font-family: Verdana, sans-serif;
+  padding-left: 0px;
+}
+
+/* end of info's configration */
+
+
+
+
+/* stat config of work */
+.cooking{
+  width: 1600px;
+  margin-left: 400px;
+}
+
+.cooking p{
+  width: 800px;
+  /*margin-left: 400px; */
+}
+
+/* end of skill's sonfiguration */
+
+/* start config of footer */
+
+/* end of footer's configuration */

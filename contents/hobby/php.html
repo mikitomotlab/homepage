@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>phpを学ぶ</title>
+  </head>
+  <body>
+    <header id="itempage">
+      <nav>
+        <ul>
+          <li><a href="aruduno.html">アルデューノ</a></li>
+          <li><a href="samba.html">samba</a></li>
+          <li><a href="git.html">git</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>PHPの導入</h1>
+        <h2>XAMPPの導入</h2>
+        <p>まず、ソフトウェアをダウンロードします。<br>
+        <a href="http://www.apachefriends.org/jp/index.html">ソフトウェアのダウンロード</a>
+      </p>
+        <p>次にセットアップをします。<br>
+          ダウンロードした実行ファイルし、set up画面を表示する。そして、[apache],[PHP],[MySQL],[phpMyAdmin]にチェックを入れる。<br>
+          初回起動時は、次に言語選択をする。そのあと次へ進むとインストールする。<br>
+          インストールが終わった後、今回では、c//xampp//xampp-control.exeをダブルクリックして起動する。<br>
+          表示された画面にApache,MySQLの行の[start]をクリックし、起動する。この時、Apache,MySQLの文字が緑色になれば、成功している。<br>
+          もし、エラーが生じた場合は、使用するportが既に使われていることがある。<br>
+          今回は、Apacheを起動する際に、VPNserverが既にport443を使用していたためエラーを生じた。そのため、1つの.confファイルを書き換えた。
+          <ul>
+              <li>c//xampp//apache//conf//extra//httpd-ssl.conf(port:443->441)
+          </ul>
+          この時、portを80または443のどちらかを使うようにしないとphpMyadminにアクセスできなくなります。（ブラウザで起動しないといけないため）<br>
+          そのため、今回はport80を残しました。<br>
+          これにより、startをクリックすると、起動させることができました。<br>
+          <a href="https://php1st.com/946">portを使用していたことによるエラー対処をした時の参考ページ</a>
+
+          <h2>ファイルを実行用フォルダにコピーする<h2>
+          作成した.phpのファイルを実行するときにはC//xampp//htdocs//にコピーする。<br>
+          表示を確認するときは、http://localhost//-.phpをブラウザに入力する。<br>
+
+          <h2>ファイルを実行する</h2>
+          http://localhost:80/(file_name.php)<br>
+          portを変更した場合、localhost:portnumberとする。
+          <h2>phpMyAdminを起動する</h2>
+          Mysqlのコードを書きたいとき（データベースの改良をしたいとき）は
+          <ul>
+          <li>C//xampp//xampp-control.exeをダブルクリック
+          <li>Mysqlの行のadminをクリックする
+          <li>起動する
+        </ul>
+
+
+    </main>
+    <footer>
+     <p>Copyright &copy; Wakaba shop</p>
+   </footer>
+  </body>
+</html>

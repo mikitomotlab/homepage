@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>mypage</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<!-- <header class="site-header">
+    <h1 class="site-logo"><img src="image/mokuro.PNG" alt="WEBDESIGNDAY"></h1>
+    <nav class="gnav">
+        <ul class="gnav__menu">
+            <li class="gnav__menu__item"><a href=".//index.html">Top</a></li><br>
+            <li class="gnav__menu__item"><a href=".//about.html">Profile</a></li>
+            <li class="gnav__menu__item"><a href="">Works</a></li>
+            <li class="gnav__menu__item"><a href=".//kennkyuu.html">Study</a></li>
+            <li class="gnav__menu__item"><a href=".//music.html">Hobby</a></li>
+        </ul>
+    </nav>
+</header> -->
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="vue.js"></script>
+
+<header>
+  <h1>Hobby</h1>
+</header>
+
+<body>
+  <div id="app">
+    <div>
+        <transition-group appear tag="div" @before-enter="beforeEnter">
+            <li v-for="(item, index) in memo" :data-index="index" :key="item"><a v-bind:href="item.url">{{item.text}}</a></li>
+        </transition-group>
+    </div>
+    <div>try1</div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

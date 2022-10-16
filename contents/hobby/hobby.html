@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>リンク集</title>
+</head>
+<body background="image/back.gif">
+
+<div align="center">
+
+<img src="image/welcome.gif"
+width="210" height="88" alt="welcome">
+<br><br>
+
+<hr width="500">
+<a href="index.html">トップ</a>
+    <a href="about.html">プロフィール</a>
+    <a href="link.html">リンク集</a><br>
+<hr width="500"><br><br>
+
+
+<a href="http://www.shoshinsha.com/hp/index.html"><br>
+1時間で作るホームページ</a><br>
+<a href="http://www.yahoo.co.jp/">Yahoo</a><br>
+<a href="http://www.google.co.jp/">Google</a>
+<br><br>
+
+<hr width="500"><br>
+raspberrypiで複数のWIFI環境に固定IPアドレスを設定する<br>
+<a href="http://kouki-hoshi.hatenablog.com/entry/2016/07/16/153836">raspberrypiに固定ipアドレスを設定する</a><br>
+wpa_supplicant.conf,dhcpcd.confの２つでSSIDの名前をSSID-...となっているところのSSIDはつけない<br>
+重複がないよう、/etc/network/interfacesではなく、/etc/dhcpcd.confで設定する<br>
+WIFIネットワークがWPA2の場合は、wpa_supplicantの<br>
+network={ <br>
+#<br>
+# SSIDは""で囲う<br>
+    ssid="SSIDを記入"<br>
+#<br>
+# 平文のパスは""で囲う<br>
+    psk="パスフレーズ"<br>
+#<br>
+# WPA-PSK,WPA-EAP,NONE<br>
+    key_mgmt=WPA-PSK<br>
+#<br>
+# WPAの場合はWPAに変更する、WPA2の場合はRSN<br>
+    proto=RSN<br>
+
+#<br>
+# ステルスモードの場合は scan_ssid=1 に変更<br>
+    scan_ssid=0(wifiアクセスポイントが見えるように設定しているとき)<br>
+             or<br>
+    scan_ssid=1(wifiアクセスポイントが見えないに設定しているとき)<br>
+    
+
+}<br>
+
+
+
+
+<hr width="500"><br>
+file exploreの設定<br>
+
+表示名：MIKI<br>
+ホスト名/IPアドレス：192.168.1.82(MIKI)VPNserverを使うときはipアドレスを使うほうが良い<br>
+ポート：445<br>
+ユーザー名：pi<br>
+パスワード：19960807Sm<br>
+
+
+
+<hr width="500"><br>
+VPNserverのたてかた<br>
+・NTT RV440NEのルーターを使う場合</a><br>
+設定はhttp://192.168.1.1をgoogleなどのリンクで検索すると設定画面を開くことができる。<br>
+
+<a href="https://www.doctor-m.net/entry/vpn">VPNserverの設定</a><br>
+＊グローバルIPアドレス(WAN側のIPアドレスが変更されるとVPNでの通信ができなくなる。</a><br><br>
+
+<a href="https://faq.interlink.or.jp/faq2/View/wcDisplayContent.aspx?id=355">iphoneでVPNserverを使うために必要な設定</a><br>
+<a href="http://ezxnet.com/iphone/entry6277/">iphoneでVPNserverを使うために必要な設定（２）</a><br>
+
+RV440NEルーターのIPアドレスの設定<br>
+<a href="http://www.geocities.co.jp/NatureLand/8243/prs300ne/guide/4-w/8w_m4.html">ルーターのIPアドレスの設定方法</a><br>
+・ポート開放をする<br>
+<a href="https://www.akakagemaru.info/port/rv-440ne.html#reboot">NTT RV440NEのルーターでポート開放を行う</a><br>
+
+静的ipマスカレード設定<br>
+変換対象プロトコル：TCP<br>
+変換対象ポート：22,443,445(fileexplore)<br>
+宛先アドレス：192.168.1.82(raspberrypi)<br>
+エントリ番号をチェックする<br>
+<br>
+静的NAT設定<br>
+接続先：接続設定１<br>
+宛先アドレス：192.168.1.82(raspberrypi)<br>
+<br>
+VPNサーバー設定<br>
+[VPNサーバー機能]<br>
+VPNサーバ機能の起動：有効<br>
+利用する接続先：メインセッション<br>
+事前共有鍵：（設定時に表示されたもの）<br>
+接続名:miki<br>
+ユーザ名：mikitomo<br>
+パスワード：19960807Sm<br>
+
+</a>
+
+・raspberrypiでVPNserverを構築する<br>
+<a href="https://qiita.com/tkyonezu/items/00311e2285366984891c">raspberrypiでVPNserverを構築する</a><br>
+#SoftEther VPN<br>
+auto br0<br>
+iface br0 inet static<br>
+address 192.168.xxx.xxx    # 固定 IP アドレスを設定<br>
+netmask 255.255.255.0<br>
+network 192.168.xxx.0<br>
+broadcast 192.168.xxx.255<br>
+gateway 192.168.xxx.xxx　　　　　　　# 使用するルータの IP アドレスを設定<br>
+
+bridge_ports eth0<br>
+bridge_maxwait 10<br><br>
+を/etc/network/interfacesではなく/etc/dhcpcd.confの下にする<br>
+
+
+
+・WindowsでVPNserverを構築する(SoftEther)<br>
+<a href="https://ja.softether.org/4-docs/2-howto/L2TP_IPsec_Setup_Guide/1">L2TP機能の有効化</a><br>
+
+iphoneでVPNserverを使うときの設定<br>
+設定―一般―VPN―VPN構成を追加<br>
+タイプ：L2TP<br>
+サーバ：124.146.66.14(WAN側のIPアドレス）rv440NE設定画面では情報ー現在の状態の機器状態情報の欄にある<br>
+
+
+<hr width="500"><br>
+
+どこでネットワーク接続に関する設定を間違えているかを確認する<br>
+sudo systemctl status dhcpcd.service<br>
+
+<hr width="500">
+<br>
+
+<a href="index.html">戻る</a><br>
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
